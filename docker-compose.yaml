@@ -2,36 +2,20 @@ version: '1'
 services:
   db:
     image: postgres:10-alpine
-    container_name: "vasvm_postgres"
+    container_name: "postgres"
     ports:
       - "5432:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data # <local directory>:<container directory>
       - ./dbDump:/dump
   app:
-    build:
-      context: .
-      dockerfile: ./docker/app/Dockerfile
-      args:
-        rails_env: production
-    image: vas_valuation_manager_master_web_1
+    image: alpine:3.7
     ports:
       - "3001:3000"    
     volumes:
-      - ./app:/app/app
+      - ./app:/app
     depends_on:
       - db
     environment:
       DATABASE_URL: postgres://postgres@db/the_oracle
       RAILS_ENV: review
-  sidekiq:
-    image: vas_valuation_manager_master_web_1
-    command: bundle exec sidekiq -C ./config/sidekiq.yml
-    volumes:
-      - .:/app
-    depends_on:
-      - app
-      - db
-    environment:
-      DATABASE_URL: postgres://postgres@db/the_oracle
-      RAILS_ENV: production
