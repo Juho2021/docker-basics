@@ -1,0 +1,25 @@
+# Here is a list of most commply used docker commands
+docker                                                                                              # DOCKER lists docker commands
+docker container --help                                                                             # DOCKER docker help
+docker images                                                                                       # DOCKER shows the images you have
+docker image rm <>                                                                                  # DOCKER remove an image
+docker container ls                                                                                 # DOCKER list containers
+docker container ls --all                                                                           # DOCKER lists also the ones that are not running, use $ docker container ls -aq for quiet mode
+docker pull                                                                                         # DOCKER pull docker image from a public repo
+docker build --tag <> .                                                                             # DOCKER build an image from Dockerfile. Path specified as "."
+docker container create                                                                             # DOCKER create a new container
+docker logs <container>                                                                             # DOCKER shows logs
+docker config                                                                                       # DOCKER shows configurations
+docker run hello-world                                                                              # DOCKER execute Docker image. Note! run command pulls the image if it is not found locally
+docker run -it busybox /bin/sh                                                                      # DOCKER create container from image and open an interactive shell within it
+docker run nginx:1.9.9                                                                              # DOCKER run a specific version/tag
+docker run --name MyNginx nginx:1.9.9                                                               # DOCKER containers can be named when they are created
+docker run --name test-local-db -e POSTGRES_PASSWORD=tester1234 --detach bitnami/postgresql:latest
+docker stop MyNginx                                                                                 # DOCKER the container name can be used to stop the container:
+docker --host list                                                                                  # DOCKER Daemon socket(s) to connect to
+docker container exec -it <> /bin/bash                                                              # DOCKER open up a terminal inside a container
+docker run -it 1cc930efb066 /bin/bash                                                               # DOCKER run container with interactive shell
+docker run 1cc930efb066 /bin/bash -c pwd                                                            # DOCKER run container and a given command
+docker volume ls                                                                                    # DOCKER list docker volumes
+docker volume rm <>                                                                                 # DOCKER remove one or more volumes
+docker volume prune                                                                                 # DOCKER remove all unused local volumes
