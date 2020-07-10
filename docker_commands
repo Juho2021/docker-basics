@@ -3,8 +3,6 @@ docker                                                                          
 docker container --help                                                                             # DOCKER docker help
 docker images                                                                                       # DOCKER shows the images you have
 docker image rm <>                                                                                  # DOCKER remove an image
-docker pull <>                                                                                      # DOCKER pull docker image from a public repo
-docker build --tag <> .                                                                             # DOCKER build an image from Dockerfile. Path specified as "."
 docker run hello-world                                                                              # DOCKER execute Docker image. Note! run command pulls the image if it is not found locally
 docker run -it busybox /bin/sh                                                                      # DOCKER create container from image and open an interactive shell within it
 docker run 1cc930efb066 /bin/bash -c pwd                                                            # DOCKER run container and a given command
