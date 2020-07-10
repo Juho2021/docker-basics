@@ -9,7 +9,7 @@ services:
       - ./tmp/db:/var/lib/postgresql/data # <local directory>:<container directory>
       - ./dbDump:/dump
   app:
-    image: alpine:3.7
+    image: <> # your image
     ports:
       - "3001:3000"    
     volumes:
