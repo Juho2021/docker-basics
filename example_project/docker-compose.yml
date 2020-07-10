@@ -20,7 +20,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres@db/the_oracle	# this part creates a database called 'the_oracle'
       RAILS_ENV: test
-      RAILS_MASTER_KEY: dd4f78ae97d339d438795d7dfbd41da9
+      RAILS_MASTER_KEY: <>
       DATABASE_HOST: localhost
       DATABASE_USER: postgres
       DATABASE_PASSWORD: postgres
