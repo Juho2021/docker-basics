@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     image: mdillon/postgis:10-alpine
-    container_name: "vasvm_postgres"
+    container_name: "postgres"
     ports:
       - "5432:5432"
     environment:
@@ -14,7 +14,7 @@ services:
     ports:
       - "3001:3000"    
     volumes:
-      - /home/taneli/environment/VAS_valuation_manager:/app # this needs to be changed when run
+      - /home/taneli/environment/<>:/app # this needs to be changed when run
     depends_on:
       - db
     environment:
