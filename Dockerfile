@@ -30,6 +30,6 @@ WORKDIR /app
 # copy all files from your local machine ./app-folder to the container /app-folder
 COPY ./app /app
 # you may want to change execution rights for some of the files copied
-RUN chmod +x /app/<file>
+RUN chmod +x /app/docker-test.sh
 # currently all this does is wait 60 seconds and then terminate the container
 CMD ["/bin/sh", "-c", "sleep 60"]
