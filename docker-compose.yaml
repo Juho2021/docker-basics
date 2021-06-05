@@ -1,21 +1,28 @@
-# version: '1'
-# services:
-#   db:
-#     image: postgres:10-alpine
-#     container_name: "postgres"
-#     ports:
-#       - "5432:5432"
-#     volumes:
-#       - ./tmp/db:/var/lib/postgresql/data # <local directory>:<container directory>
-#       - ./dbDump:/dump
-#   app:
-#     image: <> # your image
-#     ports:
-#       - "3001:3000"    
-#     volumes:
-#       - ./app:/app
-#     depends_on:
-#       - db
-#     environment:
-#       DATABASE_URL: postgres://postgres@db/the_oracle
-#       RAILS_ENV: review
+version: '3.1'
+services:
+  db:
+    image: postgres
+    container_name: "postgres"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: viliboi
+    # ports:
+    #   - "5432:5432"
+    # volumes:
+    #   - ./tmp/db:/var/lib/postgresql/data # <local directory>:<container directory>
+    #   - ./dbDump:/dump
+  psqlcli:
+    image: postgres
+    container_name: "psqlcli"
+    restart: always
+    ports:
+        - "8080:8080"    
+    environment:
+      POSTGRES_PASSWORD: viliboi
+    # volumes:
+    #   - ./app:/app
+    # depends_on:
+    #   - db
+    # environment:
+    #   DATABASE_URL: postgres://postgres@db/the_oracle
+    #   RAILS_ENV: review
