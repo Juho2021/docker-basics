@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   db:
-    image: postgres
+    image: postgres:12.4
     container_name: "postgres"
     restart: always
     environment:
@@ -12,7 +12,7 @@ services:
     #   - ./tmp/db:/var/lib/postgresql/data # <local directory>:<container directory>
     #   - ./dbDump:/dump
   psqlcli:
-    image: postgres
+    image: postgres:12.4
     container_name: "psqlcli"
     restart: always
     ports:
