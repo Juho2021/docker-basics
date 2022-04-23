@@ -5,6 +5,7 @@
 3. configure docker client to work from Linux (this requires one configuration change, we can go through this together)
 4. register in dockerhub (docker.io)
 5. Go through the following examples (in this repo):
+6. oma muutos
 
 A) create a docker image from the dockerfile
 
